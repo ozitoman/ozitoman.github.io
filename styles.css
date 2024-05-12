@@ -5,7 +5,8 @@
 }
 
 body {
-    background-image: url('background/space.png');
+    /*background-image: url('background/space.png');*/
+    background-color: black;
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
