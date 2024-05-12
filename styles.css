@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#000000;
+    overflow: hidden;
+}
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+
+.ozitoman {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-image: url('/logolar/ozi_logo.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 0 3em #ffffff;
+}
+
+.linkedin {
+    position: absolute;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 4s linear infinite;
+}
+
+.moon-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8.6em;
+    height: 8.6em;
+    animation: orbit 1s linear infinite;
+}
+
+.linkedin::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    /*background-image: url('/logolar/linkedin.png');*/
+    background-color: darkgreen;
+    background-size: cover;
+    background-position: center;
+}
+
+.moon-1::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background: lightgreen;
+    background-position: center;
+}
+
+.github {
+    position: absolute;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 6s linear infinite;
+}
+
+.moon-2 {
+    position: absolute;
+    
+    top: 0;
+    right: 0;
+    width: 8.6em;
+    height: 8.6em;
+    animation: orbit 3s linear infinite;
+}
+
+.github::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    /*background-image: url('/logolar/github.png');*/
+    background-color: darkred;
+    background-size: cover;
+    background-position: center;
+}
+
+.moon-2::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background: salmon;
+    background-position: center;
+}
+
+.deviantart {
+    position: absolute;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 3s linear infinite;
+}
+
+.moon-3 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8.6em;
+    height: 8.6em;
+    animation: orbit 1.5s linear infinite;
+}
+
+.deviantart::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    /*background-image: url('/logolar/deviantart.png');*/
+    background-color: blue;
+    background-size: cover;
+    background-position: center;
+}
+
+.moon-3::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background: #fff;
+    background-position: center;
+}
+
+.spotify {
+    position: absolute;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 2s linear infinite;
+}
+
+.moon-4 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8.6em;
+    height: 8.6em;
+    animation: orbit 3s linear infinite;
+}
+
+.spotify::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    /*background-image: url('spotify.png');*/
+    background-color: goldenrod;
+    background-size: cover;
+    background-position: center;
+}
+
+.moon-4::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background: lightgoldenrodyellow;
+    background-position: center;
+}
+
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.email {
+    position: absolute;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 5s linear infinite;
+}
+
+.moon-5 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8.6em;
+    height: 8.6em;
+    animation: orbit 2s linear infinite;
+}
+
+.email::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    /*background-image: url('email.png');*/
+    background-color: darkorchid;
+    background-size: cover;
+    background-position: center;
+}
+
+.moon-5::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background: lightpink;
+    background-position: center;
+}
