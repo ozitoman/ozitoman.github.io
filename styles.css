@@ -6,7 +6,7 @@
 
 body {
     background-image: url('background/space.png');
-    background-repeat: round;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
     height: 100vh;
