@@ -1,1 +1,1 @@
-# ozitoman.github.io
+Solar System of OzitoMan
