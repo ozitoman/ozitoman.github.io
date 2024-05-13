@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     
-    <title>ozitoman</title>
-
-    <link rel="icon" type="image/x-icon" href="icon/ozi_logo.ico">
-
-    <meta name="viewport" 
-    content="width=device-width, 
-    initial-scale=1.0, 
-    maximum-scale=1.0, 
-    minimum-scale=1.0">
+    <meta charset="utf-8">
     
-    <meta charset="UTF-8">
+    <title>ozitoman</title>
+    
+    <meta name="description" content="Solar System of a Curious Engineer.">
+    
+    <meta name="keywords" content="ozan, üstün, programming, tasarımcı, tasarimci, tasarım, designer, design, programlama, yazılım, software, yazılımcı, programmer, developer, geliştirici, gelistirici, yazilim, yazilimci, ustun">
+    
+    <meta name="author" content="Ozan Üstün">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <link rel="icon" type="image/x-icon" href="icon/ozi_logo.ico">    
     
     <link rel="stylesheet" href="styles.css">
 
@@ -24,14 +26,13 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-HVZH904LRH');
 </script>
 
 <body>
-    
+
     <div class="container">
-            
+  
         <div class="ozitoman"></div>
         
         <div class="linkedin">
@@ -55,5 +56,77 @@
         </div>
         
     </div>
+
+    <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+    const canvas = document.createElement("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.position = "fixed";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.pointerEvents = "none";
+    document.body.appendChild(canvas);
+    
+    const ctx = canvas.getContext("2d");
+
+    function getRandomColor() {
+        const colors = [
+            { color: "red", weight: 0.2 },        // Renkler ve ağırlıkları
+            { color: "#ffa371", weight: 0.1 },
+            { color: "white", weight: 0.2 },
+            { color: "#fffa86", weight: 0.2 },
+            { color: "#a87bff", weight: 0.3 }
+        ];
+
+        // Toplam ağırlığı hesapla
+        const totalWeight = colors.reduce((acc, curr) => acc + curr.weight, 0);
+
+        // Rastgele bir sayı üret
+        const random = Math.random() * totalWeight;
+
+        // Rastgele sayıya karşılık gelen rengi seç
+        let cumulativeWeight = 0;
+        for (const color of colors) {
+            cumulativeWeight += color.weight;
+            if (random < cumulativeWeight) {
+                return color.color;
+            }
+        }
+
+        // Eğer bir renk seçilemediyse varsayılan olarak beyazı dön
+        return "white";
+    }
+
+    function getRandomSize(minSize, maxSize) {
+        return Math.random() * (maxSize - minSize) + minSize;
+    }
+
+    function drawRandomStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const numStars = 1500;      // Yıldız sayısı
+        const minSize = 0.1;        // Min yıldız boyutu
+        const maxSize = 3;        // Max yıldız boyutu
+        for (let i = 0; i < numStars; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const size = getRandomSize(minSize, maxSize);
+            ctx.fillStyle = getRandomColor();
+            ctx.fillRect(x, y, size, size);
+        }
+    }
+
+    window.addEventListener("resize", function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        drawRandomStars();
+    });
+
+    drawRandomStars();
+});
+
+    </script>
+
 
 </body>
