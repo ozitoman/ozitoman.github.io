@@ -95,16 +95,16 @@ body {
     border-color: #fff transparent transparent transparent;
     border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
-    top: 0em;
-    left: 0em;
-    width: 40em;
-    height: 40em;
+    top: -2.5em;
+    left: -2.5em;
+    width: 45em;
+    height: 45em;
     animation: orbit 12s linear infinite;
 }
 
 .moon-2 {
     position: absolute;
-    
+
     top: 0;
     right: 0;
     width: 8.6em;
@@ -116,10 +116,10 @@ body {
     content: ".";
     position: absolute;
     border-radius: 50%;
-    top: 2.8em;
-    right: 2.8em;
-    width: 5em;
-    height: 5em;
+    top: 5em;
+    right: 5em;
+    width: 3em;
+    height: 3em;
     background-image: url('/vector_logos/github.svg');
     background-color: black;
     background-size: cover;
@@ -146,10 +146,10 @@ body {
     border-color: #fff transparent transparent transparent;
     border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
-    top: 5em;
-    left: 5em;
-    width: 30em;
-    height: 30em;
+    top: -10em;
+    left: -10em;
+    width: 60em;
+    height: 60em;
     animation: orbit 14s linear infinite;
 }
 
@@ -166,8 +166,8 @@ body {
     content: ".";
     position: absolute;
     border-radius: 50%;
-    top: 2.8em;
-    right: 2.8em;
+    top: 7.2em;
+    right: 7.2em;
     width: 3em;
     height: 3em;
     background-image: url('vector_logos/deviantart.svg');
@@ -196,10 +196,10 @@ body {
     border-color: #fff transparent transparent transparent;
     border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
-    top: 5em;
-    left: 5em;
-    width: 30em;
-    height: 30em;
+    top: -17.5em;
+    left: -17.5em;
+    width: 75em;
+    height: 75em;
     animation: orbit 16s linear infinite;
 }
 
@@ -216,8 +216,8 @@ body {
     content: ".";
     position: absolute;
     border-radius: 50%;
-    top: 2.8em;
-    right: 2.8em;
+    top: 9.4em;
+    right: 9.4em;
     width: 3em;
     height: 3em;
     background-image: url('/vector_logos/spotify.svg');
@@ -249,49 +249,3 @@ body {
     top: 5em;
     left: 5em;
     width: 30em;
-    height: 30em;
-    animation: orbit 18s linear infinite;
-}
-
-.moon-5 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8.6em;
-    height: 8.6em;
-    animation: orbit 4.5s linear infinite;
-}
-
-.email::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 2.8em;
-    right: 2.8em;
-    width: 3em;
-    height: 3em;
-    background-image: url('vector_logos/email.svg');
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 3em #c5221f;
-    background-position: center;
-}
-
-.moon-5::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background: #c5221f;
-    background-position: center;
-}
-
-@keyframes orbit {
-    to {
-        transform: rotate(360deg);
-    }
-}
