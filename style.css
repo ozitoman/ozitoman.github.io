@@ -239,16 +239,17 @@ body {
     background: #1cc95a;
     background-position: center;
 }
+
 .email {
     position: absolute;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
     border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
-    top: 5em;
-    left: 5em;
-    width: 30em;
-    height: 30em;
+    top: -25em;
+    left: -25em;
+    width: 90em;
+    height: 90em;
     animation: orbit 18s linear infinite;
 }
 
@@ -265,8 +266,8 @@ body {
     content: ".";
     position: absolute;
     border-radius: 50%;
-    top: 2.8em;
-    right: 2.8em;
+    top: 11.6em;
+    right: 11.6em;
     width: 3em;
     height: 3em;
     background-image: url('vector_logos/email.svg');
@@ -294,4 +295,3 @@ body {
         transform: rotate(360deg);
     }
 }
-
