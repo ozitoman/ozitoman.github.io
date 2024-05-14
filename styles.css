@@ -239,7 +239,6 @@ body {
     background: #1cc95a;
     background-position: center;
 }
-
 .email {
     position: absolute;
     border-style: solid;
@@ -249,3 +248,50 @@ body {
     top: 5em;
     left: 5em;
     width: 30em;
+    height: 30em;
+    animation: orbit 18s linear infinite;
+}
+
+.moon-5 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8.6em;
+    height: 8.6em;
+    animation: orbit 4.5s linear infinite;
+}
+
+.email::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-image: url('vector_logos/email.svg');
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 3em #c5221f;
+    background-position: center;
+}
+
+.moon-5::before {
+    content: ".";
+    position: absolute;
+    border-radius: 50%;
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background: #c5221f;
+    background-position: center;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
