@@ -5,7 +5,6 @@
 }
 
 body {
-    /*background-image: url('background/space.png');*/
     background-color: black;
     background-repeat: repeat;
     background-attachment: fixed;
@@ -27,10 +26,10 @@ body {
 
 .ozitoman {
     position: absolute;
-    top: 15em;
-    left: 15em;
-    width: 10em;
-    height: 10em;
+    top: 12.5em;
+    left: 12.5em;
+    width: 15em;
+    height: 15em;
     background-image: url('/vector_logos/ozi_logo.svg');
     background-size: cover;
     background-color: black;
@@ -39,12 +38,15 @@ body {
     box-shadow: 0 0 3em #daa520;
 }
 
-.linkedin {
+.linkedin, .github, .deviantart, .spotify, .email {
     position: absolute;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
     border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
+}
+
+.linkedin {
     top: 5em;
     left: 5em;
     width: 30em;
@@ -52,49 +54,7 @@ body {
     animation: orbit 10s linear infinite;
 }
 
-.moon-1 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8.6em;
-    height: 8.6em;
-
-    animation: orbit 2.5s linear infinite;
-}
-
-.linkedin::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 2.8em;
-    right: 2.8em;
-    width: 3em;
-    height: 3em;
-    background-image: url('vector_logos/linkedin.svg');
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 3em #0072b1;
-    background-color: black;
-}
-
-.moon-1::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background: #0072b1;
-    background-position: center;
-}
-
 .github {
-    position: absolute;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    border-width: 0.1em 0.1em 0 0;
-    border-radius: 50%;
     top: -2.5em;
     left: -2.5em;
     width: 45em;
@@ -102,50 +62,7 @@ body {
     animation: orbit 12s linear infinite;
 }
 
-.moon-2 {
-    position: absolute;
-
-    top: 0;
-    right: 0;
-    width: 8.6em;
-    height: 8.6em;
-    animation: orbit 3s linear infinite;
-}
-
-.github::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 5em;
-    right: 5em;
-    width: 3em;
-    height: 3em;
-    background-image: url('/vector_logos/github.svg');
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 3em white;
-    background-position: center;
-}
-
-.moon-2::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background: white;
-    background-position: center;
-}
-
 .deviantart {
-    position: absolute;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    border-width: 0.1em 0.1em 0 0;
-    border-radius: 50%;
     top: -10em;
     left: -10em;
     width: 60em;
@@ -153,49 +70,7 @@ body {
     animation: orbit 14s linear infinite;
 }
 
-.moon-3 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8.6em;
-    height: 8.6em;
-    animation: orbit 3.5s linear infinite;
-}
-
-.deviantart::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 7.2em;
-    right: 7.2em;
-    width: 3em;
-    height: 3em;
-    background-image: url('vector_logos/deviantart.svg');
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 3em #00e59b;
-    background-position: center;
-}
-
-.moon-3::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background: #00e59b;
-    background-position: center;
-}
-
 .spotify {
-    position: absolute;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    border-width: 0.1em 0.1em 0 0;
-    border-radius: 50%;
     top: -17.5em;
     left: -17.5em;
     width: 75em;
@@ -203,49 +78,7 @@ body {
     animation: orbit 16s linear infinite;
 }
 
-.moon-4 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8.6em;
-    height: 8.6em;
-    animation: orbit 4s linear infinite;
-}
-
-.spotify::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 9.4em;
-    right: 9.4em;
-    width: 3em;
-    height: 3em;
-    background-image: url('/vector_logos/spotify.svg');
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 3em #1cc95a;
-    background-position: center;
-}
-
-.moon-4::before {
-    content: ".";
-    position: absolute;
-    border-radius: 50%;
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background: #1cc95a;
-    background-position: center;
-}
-
 .email {
-    position: absolute;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    border-width: 0.1em 0.1em 0 0;
-    border-radius: 50%;
     top: -25em;
     left: -25em;
     width: 90em;
@@ -253,32 +86,70 @@ body {
     animation: orbit 18s linear infinite;
 }
 
-.moon-5 {
+.moon-1, .moon-2, .moon-3, .moon-4, .moon-5 {
     position: absolute;
     top: 0;
     right: 0;
     width: 8.6em;
     height: 8.6em;
-    animation: orbit 4.5s linear infinite;
+    animation: orbit-moon 2.5s linear infinite;
 }
 
-.email::before {
+.linkedin::before, .github::before, .deviantart::before, .spotify::before, .email::before {
     content: ".";
     position: absolute;
     border-radius: 50%;
-    top: 11.6em;
-    right: 11.6em;
-    width: 3em;
-    height: 3em;
-    background-image: url('vector_logos/email.svg');
-    background-color: black;
     background-size: cover;
     background-position: center;
-    box-shadow: 0 0 3em #c5221f;
-    background-position: center;
+    background-color: black;
 }
 
-.moon-5::before {
+.linkedin::before {
+    top: 2.1em;
+    right: 2.1em;
+    width: 4.5em;
+    height: 4.5em;
+    background-image: url('vector_logos/linkedin.svg');
+    box-shadow: 0 0 3em #0072b1;
+}
+
+.github::before {
+    top: 4.25em;
+    right: 4.25em;
+    width: 4.5em;
+    height: 4.5em;
+    background-image: url('/vector_logos/github.svg');
+    box-shadow: 0 0 3em white;
+}
+
+.deviantart::before {
+    top: 6.45em;
+    right: 6.45em;
+    width: 4.5em;
+    height: 4.5em;
+    background-image: url('vector_logos/deviantart.svg');
+    box-shadow: 0 0 3em #00e59b;
+}
+
+.spotify::before {
+    top: 8.65em;
+    right: 8.65em;
+    width: 4.5em;
+    height: 4.5em;
+    background-image: url('/vector_logos/spotify.svg');
+    box-shadow: 0 0 3em #1cc95a;
+}
+
+.email::before {
+    top: 10.85em;
+    right: 10.85em;
+    width: 4.5em;
+    height: 4.5em;
+    background-image: url('vector_logos/email.svg');
+    box-shadow: 0 0 3em #c5221f;
+}
+
+.moon-1::before, .moon-2::before, .moon-3::before, .moon-4::before, .moon-5::before {
     content: ".";
     position: absolute;
     border-radius: 50%;
@@ -286,11 +157,36 @@ body {
     right: 0.2em;
     width: 1.2em;
     height: 1.2em;
+    animation: orbit-moon 2.5s linear infinite;
+}
+
+.moon-1::before {
+    background: #0072b1;
+}
+
+.moon-2::before {
+    background: white;
+}
+
+.moon-3::before {
+    background: #00e59b;
+}
+
+.moon-4::before {
+    background: #1cc95a;
+}
+
+.moon-5::before {
     background: #c5221f;
-    background-position: center;
 }
 
 @keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit-moon {
     to {
         transform: rotate(360deg);
     }
