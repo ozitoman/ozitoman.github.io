@@ -109,7 +109,7 @@ body {
     right: 2.1em;
     width: 4.5em;
     height: 4.5em;
-    background-image: url('vector_logos/linkedin.svg');
+    background-image: url('/vector_logos/linkedin.svg');
     box-shadow: 0 0 3em #0072b1;
 }
 
@@ -127,7 +127,7 @@ body {
     right: 6.45em;
     width: 4.5em;
     height: 4.5em;
-    background-image: url('vector_logos/deviantart.svg');
+    background-image: url('/vector_logos/deviantart.svg');
     box-shadow: 0 0 3em #00e59b;
 }
 
@@ -145,7 +145,7 @@ body {
     right: 10.85em;
     width: 4.5em;
     height: 4.5em;
-    background-image: url('vector_logos/email.svg');
+    background-image: url('/vector_logos/email.svg');
     box-shadow: 0 0 3em #c5221f;
 }
 
