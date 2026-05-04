@@ -3,113 +3,81 @@
 <head>
     <meta charset="utf-8">
     <title>ozitoman</title>
-    <meta name="description" content="Solar System of a Curious Engineer.">
-    <meta name="keywords" content="ozan, üstün, programming, tasarımcı, tasarimci, tasarım, designer, design, programlama, yazılım, software, yazılımcı, programmer, developer, geliştirici, gelistirici, yazilim, yazilimci, ustun">
-    <meta name="author" content="Ozan Üstün">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" type="image/x-icon" href="icon/ozi_logo.ico">    
     <link rel="stylesheet" href="style.css">
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HVZH904LRH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-HVZH904LRH');
-</script>
-
 <body>
     <div class="container">
         <div class="ozitoman"></div>
 
-        <div class="linkedin">
-            <a href="https://www.linkedin.com/in/ozitoman/" target="_blank"></a>
-            <div class="moon-1"></div>
+        <div class="orbit-path linkedin-orbit">
+            <div class="planet-container">
+                <a href="https://www.linkedin.com/in/ozitoman/" target="_blank" class="planet linkedin"></a>
+                <div class="moon moon-1"></div>
+            </div>
         </div>
 
-        <div class="github">
-            <a href="https://github.com/ozitoman" target="_blank"></a>
-            <div class="moon-2"></div>
+        <div class="orbit-path github-orbit">
+            <div class="planet-container">
+                <a href="https://github.com/ozitoman" target="_blank" class="planet github"></a>
+                <div class="moon moon-2"></div>
+            </div>
         </div>
 
-        <div class="deviantart">
-            <a href="https://www.deviantart.com/ozitoman" target="_blank"></a>
-            <div class="moon-3"></div>
+        <div class="orbit-path deviantart-orbit">
+            <div class="planet-container">
+                <a href="https://www.deviantart.com/ozitoman" target="_blank" class="planet deviantart"></a>
+                <div class="moon moon-3"></div>
+            </div>
         </div>
 
-        <div class="spotify">
-            <a href="https://open.spotify.com/user/31vdtlgismtnz5iq7ybifstrtcgq" target="_blank"></a>
-            <div class="moon-4"></div>
+        <div class="orbit-path spotify-orbit">
+            <div class="planet-container">
+                <a href="https://open.spotify.com/user/31vdtlgismtnz5iq7ybifstrtcgq" target="_blank" class="planet spotify"></a>
+                <div class="moon moon-4"></div>
+            </div>
         </div>
 
-        <div class="email">
-            <div class="moon-5"></div>
+        <div class="orbit-path email-orbit">
+            <div class="planet-container">
+                <a href="mailto:ozitoman@gmail.com" class="planet email"></a>
+                <div class="moon moon-5"></div>
+            </div>
         </div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Rastgele başlangıç pozisyonu için eklenen kısım
+            const containers = document.querySelectorAll('.planet-container');
+            containers.forEach(container => {
+                const randomDegree = Math.floor(Math.random() * 360);
+                container.style.setProperty('--start-angle', randomDegree + 'deg');
+            });
+
+            // Arka plan yıldızları
             const canvas = document.createElement("canvas");
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             canvas.style.position = "fixed";
             canvas.style.top = "0";
             canvas.style.left = "0";
-            canvas.style.pointerEvents = "none";
+            canvas.style.zIndex = "-1";
             document.body.appendChild(canvas);
-
             const ctx = canvas.getContext("2d");
-
-            function getRandomColor() {
-                const colors = [
-                    { color: "red", weight: 0.2 },
-                    { color: "#ffa371", weight: 0.1 },
-                    { color: "white", weight: 0.2 },
-                    { color: "#fffa86", weight: 0.2 },
-                    { color: "#a87bff", weight: 0.3 }
-                ];
-
-                const totalWeight = colors.reduce((acc, curr) => acc + curr.weight, 0);
-                const random = Math.random() * totalWeight;
-
-                let cumulativeWeight = 0;
-                for (const color of colors) {
-                    cumulativeWeight += color.weight;
-                    if (random < cumulativeWeight) {
-                        return color.color;
-                    }
-                }
-
-                return "white";
-            }
-
-            function getRandomSize(minSize, maxSize) {
-                return Math.random() * (maxSize - minSize) + minSize;
-            }
-
-            function drawRandomStars() {
+            function drawStars() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                const numStars = 1500;
-                const minSize = 0.1;
-                const maxSize = 3;
-                for (let i = 0; i < numStars; i++) {
+                for (let i = 0; i < 1500; i++) {
                     const x = Math.random() * canvas.width;
                     const y = Math.random() * canvas.height;
-                    const size = getRandomSize(minSize, maxSize);
-                    ctx.fillStyle = getRandomColor();
+                    const size = Math.random() * 2;
+                    ctx.fillStyle = ["red", "#ffa371", "white", "#fffa86", "#a87bff"][Math.floor(Math.random()*5)];
                     ctx.fillRect(x, y, size, size);
                 }
             }
-
-            window.addEventListener("resize", function() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                drawRandomStars();
-            });
-
-            drawRandomStars();
+            window.addEventListener("resize", () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; drawStars(); });
+            drawStars();
         });
     </script>
 </body>
