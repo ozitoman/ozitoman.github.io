@@ -6,12 +6,8 @@
 
 body {
     background-color: black;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-position: 50% 50%;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -22,172 +18,119 @@ body {
     width: 40em;
     height: 40em;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ozitoman {
     position: absolute;
-    top: 12.5em;
-    left: 12.5em;
-    width: 15em;
-    height: 15em;
+    width: 12em;
+    height: 12em;
     background-image: url('/vector_logos/ozi_logo.svg');
     background-size: cover;
     background-color: black;
-    background-position: center;
     border-radius: 50%;
     box-shadow: 0 0 3em #daa520;
+    z-index: 100;
 }
 
-.linkedin, .github, .deviantart, .spotify, .email {
+.orbit-path {
     position: absolute;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    border-width: 0.1em 0.1em 0 0;
+    border: 0.15em solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center; /* Hata buradaydı, düzeltildi */
+    align-items: center;
 }
 
-.linkedin {
-    top: 5em;
-    left: 5em;
-    width: 30em;
-    height: 30em;
-    animation: orbit 10s linear infinite;
-}
-
-.github {
-    top: -2.5em;
-    left: -2.5em;
-    width: 45em;
-    height: 45em;
-    animation: orbit 12s linear infinite;
-}
-
-.deviantart {
-    top: -10em;
-    left: -10em;
-    width: 60em;
-    height: 60em;
-    animation: orbit 14s linear infinite;
-}
-
-.spotify {
-    top: -17.5em;
-    left: -17.5em;
-    width: 75em;
-    height: 75em;
-    animation: orbit 16s linear infinite;
-}
-
-.email {
-    top: -25em;
-    left: -25em;
-    width: 90em;
-    height: 90em;
-    animation: orbit 18s linear infinite;
-}
-
-.moon-1, .moon-2, .moon-3, .moon-4, .moon-5 {
+/* Gezegen Taşıyıcı */
+.planet-container {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 8.6em;
-    height: 8.6em;
-    animation: orbit-moon 2.5s linear infinite;
+    width: 100%;
+    height: 100%;
+    animation: rotate linear infinite;
+    transform: rotate(var(--start-angle, 0deg));
+    pointer-events: none;
 }
 
-.linkedin::before, .github::before, .deviantart::before, .spotify::before, .email::before {
-    content: ".";
+/* DURDURMA ÖZELLİĞİ (Gezegenin üzerine gelindiğinde) */
+/* Daha geniş tarayıcı desteği için doğrudan hover durumunu yönetiyoruz */
+.planet-container:hover,
+.planet-container:hover .moon {
+    animation-play-state: paused;
+}
+
+.planet {
     position: absolute;
-    border-radius: 50%;
+    top: 50%;
+    left: 100%;
+    width: 4em;
+    height: 4em;
+    margin-top: -2em;
+    margin-left: -2em;
+    background-color: black;
     background-size: cover;
     background-position: center;
-    background-color: black;
-}
-
-.linkedin::before {
-    top: 2.1em;
-    right: 2.1em;
-    width: 4.5em;
-    height: 4.5em;
-    background-image: url('/vector_logos/linkedin.svg');
-    box-shadow: 0 0 3em #0072b1;
-}
-
-.github::before {
-    top: 4.25em;
-    right: 4.25em;
-    width: 4.5em;
-    height: 4.5em;
-    background-image: url('/vector_logos/github.svg');
-    box-shadow: 0 0 3em white;
-}
-
-.deviantart::before {
-    top: 6.45em;
-    right: 6.45em;
-    width: 4.5em;
-    height: 4.5em;
-    background-image: url('/vector_logos/deviantart.svg');
-    box-shadow: 0 0 3em #00e59b;
-}
-
-.spotify::before {
-    top: 8.65em;
-    right: 8.65em;
-    width: 4.5em;
-    height: 4.5em;
-    background-image: url('/vector_logos/spotify.svg');
-    box-shadow: 0 0 3em #1cc95a;
-}
-
-.email::before {
-    top: 10.85em;
-    right: 10.85em;
-    width: 4.5em;
-    height: 4.5em;
-    background-image: url('/vector_logos/email.svg');
-    box-shadow: 0 0 3em #c5221f;
-}
-
-.moon-1::before, .moon-2::before, .moon-3::before, .moon-4::before, .moon-5::before {
-    content: ".";
-    position: absolute;
     border-radius: 50%;
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    animation: orbit-moon 2.5s linear infinite;
+    z-index: 10;
+    pointer-events: auto; /* Tıklama ve hover için kritik */
+    transition: transform 0.2s ease;
 }
 
-.moon-1::before {
-    background: #0072b1;
+.planet:hover {
+    transform: scale(1.3);
 }
 
-.moon-2::before {
-    background: white;
+.moon {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 0.8em;
+    height: 0.8em;
+    margin-top: -0.4em;
+    margin-left: -0.4em;
+    border-radius: 50%;
+    z-index: 5;
+    animation: moon-rotate 2.5s linear infinite;
 }
 
-.moon-3::before {
-    background: #00e59b;
+/* Yörünge Ayarları */
+.linkedin-orbit { width: 22em; height: 22em; z-index: 50; }
+.linkedin-orbit .planet-container { animation-duration: 12s; }
+
+.github-orbit { width: 34em; height: 34em; z-index: 40; }
+.github-orbit .planet-container { animation-duration: 16s; }
+
+.deviantart-orbit { width: 46em; height: 46em; z-index: 30; }
+.deviantart-orbit .planet-container { animation-duration: 20s; }
+
+.spotify-orbit { width: 58em; height: 58em; z-index: 20; }
+.spotify-orbit .planet-container { animation-duration: 24s; }
+
+.email-orbit { width: 70em; height: 70em; z-index: 10; }
+.email-orbit .planet-container { animation-duration: 28s; }
+
+/* Renkler ve Logolar */
+.linkedin { background-image: url('/vector_logos/linkedin.svg'); box-shadow: 0 0 1.5em #0072b1; }
+.github { background-image: url('/vector_logos/github.svg'); box-shadow: 0 0 1.5em white; }
+.deviantart { background-image: url('/vector_logos/deviantart.svg'); box-shadow: 0 0 1.5em #00e59b; }
+.spotify { background-image: url('/vector_logos/spotify.svg'); box-shadow: 0 0 1.5em #1cc95a; }
+.email { background-image: url('/vector_logos/email.svg'); box-shadow: 0 0 1.5em #c5221f; }
+
+.moon-1 { background: #0072b1; box-shadow: 0 0 0.5em #0072b1; }
+.moon-2 { background: white; box-shadow: 0 0 0.5em white; }
+.moon-3 { background: #00e59b; box-shadow: 0 0 0.5em #00e59b; }
+.moon-4 { background: #1cc95a; box-shadow: 0 0 0.5em #1cc95a; }
+.moon-5 { background: #c5221f; box-shadow: 0 0 0.5em #c5221f; }
+
+@keyframes rotate {
+    from { transform: rotate(var(--start-angle, 0deg)); }
+    to { transform: rotate(calc(var(--start-angle, 0deg) + 360deg)); }
 }
 
-.moon-4::before {
-    background: #1cc95a;
-}
-
-.moon-5::before {
-    background: #c5221f;
-}
-
-@keyframes orbit {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes orbit-moon {
-    to {
-        transform: rotate(360deg);
-    }
+@keyframes moon-rotate {
+    from { transform: rotate(0deg) translateX(3.8em) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(3.8em) rotate(-360deg); }
 }
